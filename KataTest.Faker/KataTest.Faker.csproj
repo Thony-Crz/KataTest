@@ -46,7 +46,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="data\GenerateRunners.cs" />
+    <Compile Include="IGenerateObject.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utilities\GenerateFakerObject.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

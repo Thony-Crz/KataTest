@@ -1,7 +1,10 @@
-﻿using KataTest.Faker.data;
+﻿using KataTest.Faker;
+using KataTest.Faker.data;
+using KataTest.Faker.Utilities;
 using KataTest.ProjectToTest;
 using NUnit.Framework;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace KataTest.TU
 {
@@ -11,9 +14,21 @@ namespace KataTest.TU
         [Test]
         public void GenerateSomeRandomRunnerTest()
         {
-            List<TrailRunnerToTestFaker> listRunner = GenerateRunners.GenerateSomeRunners(2000);
+            IGenerateObject<TrailRunnerToTestFaker> randomRunner = new GenerateFakerObject<TrailRunnerToTestFaker>();
+
+            List<TrailRunnerToTestFaker> listRunner = randomRunner.Generate<TrailRunnerToTestFaker>(2000);
 
             Assert.That(listRunner.Count == 2000);
+        }
+
+        [Test]
+        public void GenerateRandomNameTrailTest()
+        {
+            IGenerateObject<Trail> randomTrail = new GenerateFakerObject<Trail>();
+
+            List<Trail> trails = randomTrail.Generate<Trail>(1);
+
+            Assert.That(trails.Any());
         }
     }
 }

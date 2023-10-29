@@ -1,6 +1,4 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
 
 namespace KataTest.ProjectToTest
 {
@@ -20,11 +18,28 @@ namespace KataTest.ProjectToTest
         }
     }
 
+    public class Trail
+    {
+        public string Name { get; set; }    
+    }
+
     public class TrailRunnerToTestFaker
     {
-        public string Name { get; set; }
+        public string Nom { get; set; }
+        public string Prenom { get; set; }
         public DateTime DateDeNaissance { get; set; }
-        public string Location { get; set; }
-        public double BestTime { get; set; }
+        public Gender Sexe { get; set; }
+        public string City { get; set; }
+        public string Adresss { get; set; }
+        public int ITRA { get; set; }
+
+        public string StravaLink { get; set; }
+
+    }
+
+    public enum Gender
+    {
+        Male,
+        Female
     }
 }
