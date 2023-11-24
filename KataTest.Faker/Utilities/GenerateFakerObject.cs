@@ -1,8 +1,6 @@
 ﻿using Bogus;
-using KataTest.ProjectToTest;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Linq.Expressions;
 using System.Reflection;
 
@@ -25,12 +23,12 @@ namespace KataTest.Faker.Utilities
 
         private static object GenerateRandomValue(PropertyInfo propertyInfo)
         {
-            Bogus.Faker faker = new Bogus.Faker();
+            Bogus.Faker faker = new Bogus.Faker("fr");
 
             // Add more cases for different types if needed
             if (propertyInfo.PropertyType == typeof(string))
             {
-                return faker.Random.String(255);
+                return faker.Random.String2(15);
             }
             else if (propertyInfo.PropertyType == typeof(DateTime))
             {
@@ -40,10 +38,9 @@ namespace KataTest.Faker.Utilities
             {
                 return faker.Random.Number(0, 999999);
             }
-            else if (propertyInfo.PropertyType == typeof(Enum))
+            else if (propertyInfo.PropertyType.IsEnum)
             {
-                //TODO à revoir
-                return 0;
+                return GetRandomEnumValue(propertyInfo.PropertyType);
             }
             // Add more cases as needed
 
@@ -56,10 +53,23 @@ namespace KataTest.Faker.Utilities
             var parameter = Expression.Parameter(typeof(T), "x");
             var propertyAccess = Expression.Property(parameter, property);
 
-            if (propertyAccess.Type == typeof(DateTime))
-                return Expression.Lambda<Func<T, object>>(propertyAccess, parameter);
+            if (propertyAccess.Type == typeof(DateTime) 
+                || propertyAccess.Type.IsEnum 
+                || propertyAccess.Type == typeof(int))
+            {
+                var convertExpression = Expression.Convert(propertyAccess, typeof(object));
+                return Expression.Lambda<Func<T, object>>(convertExpression, parameter);
+            }
 
             return Expression.Lambda<Func<T, object>>(propertyAccess, parameter); ;
+        }
+
+        private static int GetRandomEnumValue(Type enumType)
+        {
+            Array values = Enum.GetValues(enumType);
+            Random random = new Random();
+            int randomValue = random.Next(values.Length);
+            return randomValue;
         }
     }
 }

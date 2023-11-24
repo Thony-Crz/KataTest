@@ -1,5 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34024.191
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KataTest.ProjectToTest", "KataTest.ProjectToTest\KataTest.ProjectToTest.csproj", "{F1181CC9-0737-425F-8ED4-13BC973C92EC}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KataTest.TU", "KataTest.TU\KataTest.TU.csproj", "{D863CD4B-1633-41CB-BA8F-4D017154BA1D}"
@@ -11,6 +14,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KataTest.Dummies", "KataTest.Dummies\KataTest.Dummies.csproj", "{A21E4814-E4A8-40FA-8E3B-1C91B6A67725}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KataTest.Faker", "KataTest.Faker\KataTest.Faker.csproj", "{726F5C13-C289-4E4F-B27B-131A8E23255B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Faker.KendoGrid.Generator", "Faker.KendoGrid.Generator\Faker.KendoGrid.Generator.csproj", "{DD6B9F51-AC23-4EED-8FF5-E52B11369D46}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -38,10 +43,17 @@ Global
 		{726F5C13-C289-4E4F-B27B-131A8E23255B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{726F5C13-C289-4E4F-B27B-131A8E23255B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{726F5C13-C289-4E4F-B27B-131A8E23255B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DD6B9F51-AC23-4EED-8FF5-E52B11369D46}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DD6B9F51-AC23-4EED-8FF5-E52B11369D46}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DD6B9F51-AC23-4EED-8FF5-E52B11369D46}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DD6B9F51-AC23-4EED-8FF5-E52B11369D46}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{CEC8ACE0-A136-4740-AD45-8A34C8E2D010} = {E8D6BE9B-A07E-4B29-856A-2B1B4846313A}
 		{D863CD4B-1633-41CB-BA8F-4D017154BA1D} = {E8D6BE9B-A07E-4B29-856A-2B1B4846313A}
+		{CEC8ACE0-A136-4740-AD45-8A34C8E2D010} = {E8D6BE9B-A07E-4B29-856A-2B1B4846313A}
 		{A21E4814-E4A8-40FA-8E3B-1C91B6A67725} = {E8D6BE9B-A07E-4B29-856A-2B1B4846313A}
 		{726F5C13-C289-4E4F-B27B-131A8E23255B} = {E8D6BE9B-A07E-4B29-856A-2B1B4846313A}
 	EndGlobalSection

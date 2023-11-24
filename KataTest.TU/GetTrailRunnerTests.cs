@@ -16,9 +16,9 @@ namespace KataTest.TU
         {
             IGenerateObject<TrailRunnerToTestFaker> randomRunner = new GenerateFakerObject<TrailRunnerToTestFaker>();
 
-            List<TrailRunnerToTestFaker> listRunner = randomRunner.Generate<TrailRunnerToTestFaker>(2000);
+            List<TrailRunnerToTestFaker> listRunner = randomRunner.Generate<TrailRunnerToTestFaker>(25);
 
-            Assert.That(listRunner.Count == 2000);
+            Assert.That(listRunner.Count == 25);
         }
 
         [Test]

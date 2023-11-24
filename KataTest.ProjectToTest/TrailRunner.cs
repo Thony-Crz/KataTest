@@ -32,14 +32,39 @@ namespace KataTest.ProjectToTest
         public string City { get; set; }
         public string Adresss { get; set; }
         public int ITRA { get; set; }
+        public MyUrls StravaLink { get; set; }
+    }
 
-        public string StravaLink { get; set; }
+    public class MyUrls
+    {
+        public int ID { get; set; }
+        public Scheme Scheme { get; set; }
+        public string Host { get; set; }
+        public int? Port { get; set; }
+        public string Path { get; set; }
+        public string Query { get; set; } = string.Empty;
+        public string Fragment { get; set; } = string.Empty;
 
+        public override string ToString()
+        {
+            string portString = (Port == 0) ? string.Empty : $":{Port}";
+            string queryString = string.IsNullOrEmpty(Query) ? string.Empty : $"?{Query}";
+            string fragmentString = string.IsNullOrEmpty(Fragment) ? string.Empty : $"#{Fragment}";
+
+            return $"{Scheme}://{Host}{portString}/{Path}{queryString}{fragmentString}";
+        }
     }
 
     public enum Gender
     {
         Male,
         Female
+    }   
+    
+    public enum Scheme
+    {
+        http,
+        https,
+        ftp
     }
 }
