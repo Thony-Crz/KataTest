@@ -35,13 +35,21 @@ namespace Faker.KendoGrid.Generator
     {
         public string Title { get; set; }
         public string Field { get; set; }
+        //public object Value { get; set; }
     }  
-    
+
+    /// <summary>
+    /// Pour chaque colonne on doit générer au moins une valeur
+    /// </summary>
     public class DataSource
     {
-        public Columns Column { get; set; }
+        private Columns Column { get; set; }
         public object Value { get; set; }
 
+        public DataSource()
+        {
+            
+        }
 
     }
 }

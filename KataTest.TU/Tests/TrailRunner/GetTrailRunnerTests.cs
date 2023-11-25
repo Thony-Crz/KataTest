@@ -1,12 +1,10 @@
 ﻿using KataTest.Faker;
-using KataTest.Faker.data;
 using KataTest.Faker.Utilities;
 using KataTest.ProjectToTest;
 using NUnit.Framework;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using TechTalk.SpecFlow;
 
 namespace KataTest.TU
 {

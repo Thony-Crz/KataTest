@@ -67,7 +67,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="GetTrailRunnerTests.cs" />
+    <Compile Include="Tests\KendoGrid\KendoGridGeneratorTests.cs" />
+    <Compile Include="Tests\TrailRunner\GetTrailRunnerTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Steps\TrailRaceManagerSteps.cs" />
   </ItemGroup>
@@ -76,6 +77,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Faker.KendoGrid.Generator\Faker.KendoGrid.Generator.csproj">
+      <Project>{DD6B9F51-AC23-4EED-8FF5-E52B11369D46}</Project>
+      <Name>Faker.KendoGrid.Generator</Name>
+    </ProjectReference>
     <ProjectReference Include="..\KataTest.Faker\KataTest.Faker.csproj">
       <Project>{726F5C13-C289-4E4F-B27B-131A8E23255B}</Project>
       <Name>KataTest.Faker</Name>
@@ -89,6 +94,7 @@
       <Name>KataTest.SpecflowBase</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
